@@ -4,15 +4,54 @@
 
 This repository contains the code and dataset used in the research paper titled "Dissecting Political Orientation in Media Content Through TFIDF and NLP Techniques." The study investigates the application of Term Frequency-Inverse Document Frequency (TFIDF) analysis, coupled with logistic regression, to classify news articles into conservative or liberal categories based on their content.
 
-## About the Research
+## 1. About the Research
 In an era of polarized political discourse, understanding media bias is more critical than ever. This project applies machine learning and natural language processing to a large corpus of news articles to discern linguistic patterns that correlate with political biases. We leverage the TFIDF statistical measure to highlight the importance of words within articles and use logistic regression to classify these texts according to the inferred political orientation of their source publications.
 
-## Dataset
-The dataset, titled "All the News," was sourced from Kaggle and compiled by Andrew Thompson. It consists of 142,570 articles from various U.S. news outlets spanning from 2000 to 2016. Due to GitHub's file size constraints, the dataset is not uploaded here but can be accessed directly from Kaggle at the following link: [Kaggle Dataset](https://www.kaggle.com/datasets/snapcrack/all-the-news/data)
+### 1-1. Research Question:
+Can Term Frequency-Inverse Document Frequency (TFIDF) analysis distinguish between liberal and conservative news companies in the United States based on the content of their articles?
 
-## Repository Structure
+### 1-2. Hypothesis
+TFIDF analysis of news articles will reveal distinct lexical patterns that correlate with the political bias of the news source. Specifically, conservative news outlets are expected to exhibit a unique set of frequently used terms and narratives that differ significantly from those employed by liberal news organizations.
+
+## 2. Dataset
+The dataset, titled "All the News," was sourced from Kaggle and compiled by Andrew Thompson. It consists of 142,570 articles from various U.S. news outlets spanning from 2000 to 2016. The dataset is uploaded in the data folder in the repository, also can be accessed directly from Kaggle at the following link: [Kaggle Dataset](https://www.kaggle.com/datasets/snapcrack/all-the-news/data)
+
+### 2-1. Type of Publications
+The dataset contains articles from a diverse array of 15 news outlets, including the New York Times, Breitbart, CNN, Business Insider, the Atlantic, Fox News, Talking Points Memo, Buzzfeed News, National Review, New York Post, the Guardian, NPR, Reuters, Vox, and the Washington Post. These 15 news sources span a broad spectrum of political alignments, ranging from conservative to liberal, with some positioned as neutral.
+
+### 2-2. Categorization of Data
+The dataset used in this analysis categorizes news outlets into "Conservative" and "Liberal" groups. This classification is based on the AllSides [Media Bias Chart](https://www.allsides.com/media-bias/media-bias-chart), a respected resource that assesses media sources on their political bias.
+
+#### <ins>Conservative Outlets</ins>
+- **Right**: Breitbart, Fox News, 
+- **Lean Righ**t: New York Post, National Review
+
+Breitbart and Fox News are categorized as Right by the AllSides Media Bias Chart, reflecting a conservative editorial stance. The New York Post and National Review, while still leaning conservative, are positioned closer to a neutral point of view on the spectrum. These outlets typically feature narratives that resonate with conservative principles, including limited government, individual liberties, and free markets.
+
+#### <ins>Liberal</ins>
+- **Left**: Atlantic, Vox
+- **Lean Left**: CNN, Guardian, NPR, New York Times, Washington Post, Business Insider
+
+Conversely, The Atlantic and Vox are classified as Left, exhibiting a liberal editorial focus. CNN, The Guardian, NPR, The New York Times, The Washington Post, and Business Insider are categorized as Lean Left, reflecting a preference for liberal perspectives. The content from these sources often highlights social justice, environmental concerns, and progressive policy discussions.
+
+####  <ins>Moderate and Unknown</ins>
+- **Moderate**: Reuters
+- **Unknown**: Buzzfeed News, Talking Points Memo
+
+Reuters is recognized for its neutral reporting and is thus categorized as Moderate. Buzzfeed News and Talking Points Memo are excluded from this study due to a lack of clear classification on the AllSides Media Bias Chart.
+
+#### Data Division
+
+To ensure an equitable analysis, the dataset was bifurcated into "Conservative" and "Liberal" sets. Two sources from the Right and two from the Lean Right were selected to compose the Conservative set, and similarly, two from the Left and two from the Lean Left formed the Liberal set. We then randomly sampled 250 articles from each of these publications, aiming for a balanced yet diverse representation for each political category.
+
+```
+conservative = ['Breitbart', 'Fox News', 'New York Post', 'National Review']
+liberal = ['Atlantic', 'Vox', 'CNN', 'New York Times']
+```
+
+## 3. Repository Structure
 - code/: This directory contains all Python scripts and Jupyter notebooks used in the analysis.
-- data/: Due to size constraints, this directory does not contain the data itself but includes a sample data file for reference.
+- data/: Due to size constraints, this directory contains 3 subset of the data, which was then combined to do the analysis.
 - docs/: Documentation related to the project, including the paper.
 - figures/: Any figures or images, such as charts or diagrams used in the research paper.
 
