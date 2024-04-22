@@ -51,7 +51,7 @@ liberal = ['Atlantic', 'Vox', 'CNN', 'New York Times']
 
 ## 3. Repository Structure
 - code/: This directory contains all Python scripts and Jupyter notebooks used in the analysis.
-- data/: Due to size constraints, this directory contains 3 subset of the data, which was then combined to do the analysis.
+- data/: Due to size constraints, this directory contains a text file showing a link to the [Box folder](https://vanderbilt.box.com/s/xdd2aumtcliwqb8gnr8buh8pzujtkupm). This Box contains 3 subset of the data, which was then combined to do the analysis.
 - docs/: Documentation related to the project, including the paper.
 - figures/: Any figures or images, such as charts or diagrams used in the research paper.
 
